@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VRSHOPPY</title>
+  <meta name="description" content="VR Shopping Experience" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe-master.min.js"></script>
+  <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+  <script
+    src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+  <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=0oX5Y7Q8"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script>
+    function Back(){
+      window.history.go(-1);
+    }
+    function submitjbl(){
+      document.getElementById("myForm").submit();
+    }
+  </script>
+  <style>
+    .testimonial-box img {
+    display: inline-block;
+    width: 90px;
+    height:90px;
+    border-radius: 50%;
+    margin: 0 0 15px;
+}
+.testimonial-box h4 {
+    color: #fe4819;
+}
+.testimonial-box p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 400;
+}
+.ratings-icons {
+    color: #fec42d;
+    margin-bottom: 15px;
+}
+  </style>
+</head>
+<body>
+  <a-scene startbutton>
+    <a-assets>
+      <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+      <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous" />
+      <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome"
+        crossorigin="anonymous" />
+      <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg"
+        crossorigin="anonymous" />
+      <a-asset-item id="exoFont"
+        src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150">
+      </a-asset-item>
+      <a-asset-item id="bot1" src="3dmodels/Electronics/speaker.glb"></a-asset-item>
+    </a-assets>
+<!-- <a-gui-toggle
+	width="2.5" height="0.75"
+	onclick="testToggleAction"
+	value="label toggle"
+	font-family="Arial"
+	margin="0 0 0.05 0"
+> -->
+<!-- </a-gui-toggle> -->
+<!-- </a-gui-progressbar> -->
+<a-entity htmlembed position="-2 1.5 3" rotation="0 10 0">
+  <form method="POST" id="myForm" action="addedtocart" style="visibility: hidden;">
+    <button type="submit" class="btn btn-warning form-control" style="height: 50px;">Add to Cart</button>
+    <input type="text" value="52" style="visibility: hidden;" id = "item" name="item">
+  </form>
+  <div style="background-color:#1C1C1C;padding:20px;width:400px;height: 400px;"><br/>
+  <h3 style="color:#DEE1E2;background-color: #030303;display: inline;padding: 10px;border-radius:15px;">Specifications</h3>
+  <table class="table table-dark" style="margin-top: 30px;">
+    <tbody>
+      <tr>
+        <td>Model</td>
+        <td>JBLPARTYBOX300EU</td>
+      </tr>
+      <tr>
+        <td>Product Dimensions</td>
+        <td>32 x 31 x 69 cm; 15.84 Kilograms</td>
+      </tr>
+      <tr>
+        <td>Wattage</td>
+        <td>120 Watts</td>
+      </tr>
+      <tr>
+        <td>Battery Life</td>
+        <td>18 Hours</td>
+      </tr>
+      <tr>
+        <td>Bluetooth</td>
+        <td>Yes</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</a-entity>
+<a-entity htmlembed position="2 1.5 3" rotation="0 -10 0">
+  <div style="background-color:#1C1C1C;padding:20px;width:400px;height: 400px;"><br/>
+  <h3 style="color:#DEE1E2;background-color: #030303;display: inline;padding: 10px;border-radius:15px;">User Reviews</h3>
+  <div class="container" style="margin-top:30px;">
+    <div class="row text-center">										
+            <div class="col-sm-6 col-md-4">																		
+              <div class="testimonial-box">							
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxASEhUQDxAPEA8PEBAPDxAPDw8QEBAPFREXFhUVFxUYHSggGBolHRUVITEhJSkrLi4uFx8zODUtNygtLisBCgoKDg0OFxAQFS0dHR0rKy0tLS0tLS0tLSstLSstLSstLS0tLS0rLS0tLS0tKystLS0rKy0tLS0tNzctLSs3K//AABEIAM8A8wMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAADBAIFBgEAB//EADgQAAIBAgQEAwcDAwMFAAAAAAABAgMRBAUhMQYSQVEiYXETIzKBkaGxUsHRQnLwFrLhByQzYoL/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIDBAX/xAAfEQEBAQEAAwEBAAMAAAAAAAAAAQIRAyExEkETUWH/2gAMAwEAAhEDEQA/AMhGJOKPJEkjVi7FBIo5FBIoA7ANFEYRCxQB5ROy0RJIDjJ8sb+v4GAqtROEu6UbeV5WYWpFWT7xvG3R/wCMoaOLeqvdaJfW/wCxbYTEc6jbVWtZ/j8nPr63nxWYiLvdWUu3SX8g6eInZppSils/FyryLirhOZ20s1dXaXlpLrr8xDFYKUPE21rvyzuvV2+4Qqqq1RPa38C4ziINvZN911CYXAt66eml/wCRkT9mznKOYiol4UpK3loJydxm5L6ECVyIyeJ0qsou8W0/IgeANFlud3tGpo9k0XyPn5p+G8dKScJtvl+F9bFSo1Fw0DkGYKZSS8kCkMSQGaAAsgwkgcgMNkGTZBiCJ49c4BmoomkeSJxRSHYoLGJGKDQQBKMQiR6KJpAbyRU8QTail3ZcJFFxBrJR/wAuLXw8/VFF+di0y6TT0s9fMVpUlu3f9Om7/ZG64WyVcinNavVLyOfV46MZ6UjSUo2tqvr8raplfXrNO2/ru12s9/mbzEZRCa/TLo46MpMfk8tee0vOzuR+l3DJ+3optSUk9/Da34QriZreMYSXR2VyyxuTyTen5/gRjlc9dN/kV+on/HVRXd2BsXTyKq/6Q0cgkl4g/cH+PTPNEbGgnlFlsJVcA+w5uUr47FZY4MVKIJxL6jiAzgMXKlNSXz9Bc4Mm7w2IVSKknuiUkVPC87wkuzLiSNIys9gSAzQxJAZAC8gcgswMgMNkGTkDYg4eInQNYJBIo5FBIopDsUHhEhBB4oZOpE0jiRNIRvJGd4hjaa/JpUinz2km4v1ROvis/SeXYXnqRXS6f/H0Pp+W0kopLorHz7hzWd+3hX7n0fAR8Jy6vt2Zno1GJ2rRi/iS+YaKCcqe6JWpK2Cg9lcXeAj2LydNC1TQixcqtWHiugnicOtdCyqsTrvqSpUSw6ejKjHYdIv6pXYlKw8isli6QhWiXOPir/UqMQdOXLuFWiJJkWWyaXhSPhm/NF3JFRwqvBLzkXEkaT4yv0CaAzDyAyGQFgNVBagvNgYcgbJyByEaJ45c8BrmKCJHIonFFsk6aDRQKKDQYgmkTSORJoDdSKriBe75uzLYr88jejLysxa+Hn6T4UneaR9MwexheCcvTj7V33skbijI4tX278z0sYkpMWhV8wsHcDAqzYrOoWNandFdiKbX+bEaVmhSdxepTuMRgyNWViVqbERtdFNjalk1cuswkZzHQZWYWqq8VLQp671LLFPoVlXc6Mxy6oEiJNkS2bXcMx9z6yZaSE8hjahD0b+47NGs+Mb9LzAyDTAzAFqgvIYqC8wMGQOQSQKQHELnjh4RtDFBEiMUEiimSUUESIxQSKA0ohERSJoA6kL5hTvTkv8A1Y1FhaNOMnaSunoyd65Oqxn9akQ4Ol/28fJyT+rGcbxBTptwT5pr+lb38xfhqk4Rq03/AEVZpemjX5CUcnTk5uCk3fXRv76M4/XXdLeEv9S1FK7TS89gtDjmMXaUW11a7iuYYOgpO91duNlJpTl+mEI3c2U2NcIvlWH2fK/aQUPFu1bm320Lkn+kW2fa+gZfxZh62kZWfZ6D88QpbHzHB4SF4z5JU18V4ttb78r1t6P5G7yuDsk3dNaPuZ6rXM9HVXEMdilFO7SQ1mEeSN+x854kzlzk4RbstxZlt4rVknVtjc5pp6y+hQY7OU9IpldQpObS11dlbq30XVsaxWDdG6lSkmpcvNN2jzWTcdLptXXXqbZxI59btI1cU5bgJTHKlWO0oJLurIBWoreOxbMEiySR5bjDc5UkqUI31UE7ddRmZjMsxMlWi7vWST16PobOZpm9Y6zwtMDMPMDMoi1QXmMTF5iMvIFILM5FgYDOBZNHhG0MUFgQiEiimScUEiiMUESAOpE0jiRJAbyQxhHq15AUguEXjj6k+SdzYvx3mpRcnXva6395H/ZH+C+q0ny2itWVOV07Vqz2vUX2ikaKC0OJ3MzgcD7Cv7WcHUdrc6StCP6YpvRfkquIcocp+CSlRdWpiIRlzwlCc3efNp4lexvYUU90DxuGhbZfRGktk9M9Zmr7YqhhF7unG75W3KW1772XbXqarC4dQSUVZbpbtLs/QXpYHxXtZD60MtNp85FdxGvdO3Znx7F6yfqfX+IZ+6l/az49Vfid+7L8f1Hl+Ra8PtQqRno+X4U72+xc5/Q9tP2kdFJ+0cJNzjGo0lJxfS/KnbujOZfOz8jUYWqnEu2z4iZlntl8bRS6Sb31stfRC8IuzXQ02YYdPXqUtala45rpXPFXJagw9XcFYtmZy2DlVgl+pM3EkZ/hagryn1VoryNDI0xGW77LzASGJgJlJLVBeYzUFpiMtMFINMDMDCZ48zwjaqKCxRCKCxKYpxJoigiA3USR5EkgDyRKnKzT7M9Y40F9w5eXqwy2Vqs4u97Qk/mnqaWgtDLwnFV4yV/eUkn/APL0/LNNh5aHDXoT2aSBThcNEjIY4VrKwrKY1ithOnT7syv1rn4rs9fupejPkeKVpP1Z9pzvDJ0m7rZnxnH253buzXx/WflvYjh56mgwGI0sZmDsy4wMy9xGKu6krrYqcboWPtdCnzGqTlW1VVeoMlJkYmznazhmg40uZ/1u69Ni2kL5VTcaUE9+VDUjWML9L1AEhiYvIZF6gtMakL1rdBKhaSBTiGYKYGA0cJnhG1UQsQcQsSmKcSaIxJoAkiSORJIA6cZJHmBlpSaqU5X0UuW3TxGywc9DE5lHwNrePiXqnc1eVVeaEZLqk/qc3mnt1+DXpdU2dmCjMhUqGNrokcqwuvPoZirhMY6knGvytOPJBwi6bXW+l/uXuLx0YrdXs7GdxGdS+KPVXWnTm0d/QitJeCcS4906TTt8L66HyipK8m+7+Z9Cq5gsTUcKkU1FN27tbGTzzDWm+WPKlfbZmvjv8YeSdVkKdy0weiK/DztuOOppdF6TjkOVatkVOLqXCTxFxSrK48wtUJml4cy6nKCqTgnK/hbM0b3KMPyUoR62u/VmufrDd9GrEJh7AahoyL1BeYeoLzYAvUFqg1KICpERlJMHOQedMWmgVA+Y8E9keEGrgFiDiFiWyTRNEETQgmiSIonEA6jp5HQMKrC6aezT/A/wrXvSUdnC8GvR2/gVF8ur+xryg/gq+OO1uZaNfgy8s9da+HXNcbJVE0VuY15LRbdbB4109U1quwGvDmVjkruypo4XnleVRWtq77Lre52aw6dnNvl0tFJq3qP/AOnaNua3vG23rLxLsxetlsErcig9k0rBIvM6r44XCU5ur7RxjLeLSbKbPMww85Plg0t799Ny1rZTFz+Fta630KzNqFOC8MFza767/wCfYqSKuGYrOnzXT0JxwravHVWumBlDxbdfoW+HxcY0+U0t45ZPahqaOwNsLiJXk7dwEmXGdMZfhnUqRgv6nr6Lc+hU42VuysZnhLA3vWf9sf3NSkaZYbva4wFVh5AahXUlKjAsYqIVqAA5sBJnakhebA+JzYlVeoScmAkHTkS9qeAnhdPjZxCxIwQXlLYvImiKJIRpomiKJIAkjqPI6gNxiOZYdyjeLanB80GujRYNEJIVHwtk+bupHlk0pRdpp3TTNBRe32Mnisrk5+1oNKrFXlH9cS1yfNVLwyXJKLs4u9/m2cfkzyvQ8W+xo1U6FfmOO5E7rTyQ3TaYaWHjJeJK3mZTrW8YDFZvN3spLta2hX1K0qi+Fyd7Xb0f0N7iMBS6QSt5IqcVThHZIr9c/hc/6xGLo2e3Lpe3mITmy/zSsm9VazsUGKl+5tn2x3yfCkmTwlLnqRh+qST+oGTGcuqqFSE5bRkm/Q0Y19Cw9FQiox2ikvoFBYetGcVKDTi9U0EbNGCMgM2EkwE2MBTF6gWbAzYGSrC8xquKSYGFIDILJgpCUgeOHhBuYBEBgwiZowSJRIolERpomiCJoAmiSIo6gNIWzDExpQdST0ivq+warUUU5SdkldvsYLiDOHXlaOlKL8K7vuxW8XjP6q+4FxsquJqym780FZdEubY1GbZJGoueN4VFrePXyZiv+nM0sRNd6enykfU4ao5de668+oxM87qYdqFeLUlbVLwuPr3LejnkJK/Nv0+V7Dmc5XCrHxRTtrZ7PuZSrwzBNxjUqQlq1qnH5L6kci5qrbF5xDZPV+fmZ7GZrF6J7667MHiuGKq8XtebX0KTG5bOG8tF3HMwrq/6BzDE3fn/AMFfObZKcWRUTaTjC3qMYk5ElEjIYW3DWaOlP2cn7ubt/bLubRs+Yo3ORY32lFNvxR8Mvl1LzWW5/VlUnoLSZKcgTkUhySF6gWcheowEL1ROTGa0hOTEtCTBSZOTBSYjRueOXOAbdRJoHEmi2AiJogiSAJonEHzAauY0Y/FUgvmgB1Hbmbx/FEFpRXM/1PYz2MzStU+Kbt2TsibqNc+O1bcVZvzv2FN+FPxv9T7ehmztzzM7eujOfzFjwtjPZYqEns/C/Rn2XDzur9D4NGVmmulmfXOFsyVWlG71SSZnqDLQ1FcSrYVPoOJkWQtWTw1k0rap9DAcS1vFyXvbp2PouLi7Oxgc3yp87k222xz6P4y1SBGFMexNCwKnE06z4BNWAyGKu4KSGQFh7KMwdGd9XCWkl+4nYgx9Kz02NHN6M9pWb6PQO5ro/oYYZw2OqQ2k7dnsV+mf5ayVQXnMRw+aRlpLwy+wedRdyup4hWkLSZOcgMmBoyYNslJg2xKcPHDwg3UWSc0tW0l3ZmsTxA9qUbect/oVGIxdSes5N/PT6FXUTPFb9a3FZ7Rhs+d9o/yVWI4mqP8A8cVHzerKE8ibutJ45DeJzCrU+Ocn5XshWxG51MnrSSOu56548mI3UjzOpnmCgmajg7MnCXK3ozLth8FWcJJoLOs/6+24atzK4ZyMzw3mHPFJmgczJblaSsUeYwTvcs68mUeYSevfuBxlM2tey9CvcbIvZ4ByevqV2aUeS0UOUrFXJHIQuP0MPdAKenM30uV1BCotX5AZBGCkyivxw8ePDS6Tp15R2bBHQB6njb/Fp5heZPYrTsZNbFdLh6TINgo1+5O4B654ieAn/9k=" class="img-responsive" alt="" width="90">
+                <div class="ratings-icons">
+                  <span>&#9733;</span>
+                  <span>&#9733;</span>
+                  <span>&#9733;</span>
+                  <span>&#9733;</span>
+                  <span>&#9733;</span>
+                </div>
+                <h4>Aloke Sarkar</h4>
+                <p style="color: white;">This is a beast for bass lovers, awesome sound quality, more than enough to rock a house party.</p>									 							
+              </div>					
+            </div> <!-- End Col -->																						
+          </div>
+  </div>
+  </div>
+</a-entity>
+    <a-entity scale="0.1 0.2 0.2" position="-0.2 0.75 3.8" rotation="0 0 0"
+    text-geometry="value:JBL Partybox; size: 0.5; height: 0.1;"
+    material="color:white;"></a-entity>
+    <a-entity scale="0.1 0.2 0.2" position="-0.12 0.63 3.8" rotation="0 0 0"
+    text-geometry="value:INR 52,999/-; size: 0.35; height: 0.1;" 
+    material="color:white;"></a-entity>
+    <a-gui-button 
+      width="2.5" height="0.75" scale="0.2 0.2 0.2"
+      onclick="submitjbl" key-code="32"
+      value="Add to cart"
+      font-family="Arial"
+      background-color="#D3D3D4"
+      font-color="black"
+      margin="0 0 0.05 0"
+      position="-0.25 0.48 3.8"
+      rotation="0 0 0"
+    >
+    </a-gui-button>
+    <a-gui-button 
+    width="2.5" height="0.75" scale="0.2 0.2 0.2"
+    onclick="Back" key-code="32"
+    value="Go Back"
+    font-family="Arial"
+    background-color="#D3D3D4"
+    font-color="black"
+    margin="0 0 0.05 0"
+    position="0.27 0.48 3.8"
+    rotation="0 0 0"
+  >
+  </a-gui-button>
+    <a-entity gltf-model="#bot1" position="-0.5 1 2.5" rotation="0 -90 0" scale="0.002 0.002 0.002" id="assistant">
+    </a-entity>
+    <a-entity gltf-model="#bot1" position="0.5 1 1.75" rotation="0 90 0" scale="0.002 0.002 0.002" id="assistant">
+    </a-entity>
+    <!-- <a-entity gltf-model="#bot1" position="1 2.5 -6.5" scale="0.015 0.015 0.015" rotation="0 180 0"  id="aassistant">
+    </a-entity> -->
+    <a-entity position="-3 0 -6" rotation="5 0 0">
+      <!-- <a-entity position="-0.5 0.5 -0.5" scale="0.6 1.2 1"
+        text-geometry="value: VR SHOPPY; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;"
+        material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity> -->
+    </a-entity>
+    <a-entity geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+      material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;">
+    </a-entity>
+    <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+    <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+    <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+    <a-entity light="color: white; type: ambient;"></a-entity>
+    <a-entity id="cameraRig" position="0 1 5">
+      <a-camera look-controls wasd-controls position="0 0 0" id="mycam">
+        <a-gui-cursor id="cursor" raycaster="objects: [gui-interactable]" fuse="true" fuse-timeout="2000" design="ring">
+        </a-gui-cursor>
+        <!-- /cursor -->
+      </a-camera>
+      <!-- /camera -->
+    </a-entity>
+    <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+  </a-scene>
+  <script>
+    document.getElementById("myForm").action="addedtocart?id="+localStorage.userid;
+  </script>
+</body>
+
+</html>

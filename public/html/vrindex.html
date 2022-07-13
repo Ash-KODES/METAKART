@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>VRSHOPPY</title>
+  <meta name="description" content="VR Shopping Experience" />
+  <script src="https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe-master.min.js"></script>
+  <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+  <script
+    src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=0oX5Y7Q8"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript">
+    function speak() {
+      const curr = location.href.split("/")
+      location.assign(curr[0]+"products")
+    }
+    AFRAME.registerComponent("startbutton", {
+      init: function () {
+        var x = document.getElementsByTagName("BODY")[0];
+        x.click();
+        responsiveVoice.clickEvent();
+        responsiveVoice.enableWindowClickHook();
+        var ele = document.querySelector("#assistant");
+        ele.addEventListener("click", function (evt) {
+          console.log("Clicked");
+          ele.setAttribute("animation-mixer", { clip: "*", loop: "once" });
+          window.speechSynthesis.speak(msg);
+        });
+        ele.addEventListener("animation-finished", function () {
+          console.log("Anim completed");
+          ele.removeAttribute("animation-mixer");
+        });
+      },
+    });
+    function explore() {
+      var cam = document.querySelector("#mycam");
+      var cr = document.querySelector("#cameraRig");
+      cam.setAttribute("animation",{property:"position",to: "-2 0 -4",dur: 2000,easing: "linear",loop: false});
+      cr.setAttribute("animation",{property:"rotation",to: "0 90 0",dur: 2000,easing: "linear",loop: false});
+    }
+    function backy(){
+      location.reload();
+    }
+    function ended(){
+      location.reload();
+    }
+    function goto(c){
+      if(c == 1){
+        location.href = "products";
+      }
+      if(c == 2){
+        location.href = "samsungj7";
+      }
+      if(c == 3){
+        location.href = "sonytv";
+      }
+      if(c == 4){
+        location.href = "jblspeaker";
+      }
+    }
+    function startr(){
+      var recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+      recognition.lang = 'en-IN';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 5;
+      recognition.start();
+      document.getElementById("textspoke").innerHTML = "Listening...";
+      recognition.onresult = function(event) {
+          var regText = event.results[0][0].transcript.toLowerCase();
+          console.log('You said: ', event.results[0][0].transcript);
+          document.getElementById("textspoke").innerHTML = event.results[0][0].transcript;
+          if(regText.includes("hello") || regText.includes("hi")){
+            responsiveVoice.speak("Hello, Welcome to VR Shoppy. How can I help you?", "UK English Female", {onend:startr});
+          }
+          else if(regText.includes("electronics") || regText.includes("electronic")){
+            responsiveVoice.speak("Sure, taking you to Electronics.", "UK English Female", {onend:goto(1)});
+          }
+          else if(regText.includes("mobiles") || regText.includes("mobile") || regText.includes("phones") || regText.includes("phone")){
+            responsiveVoice.speak("Sure, taking you to Mobiles.", "UK English Female", {onend:goto(1)});
+          }
+          else if(regText.includes("samsung") || regText.includes("j7") || regText.includes("tv") || regText.includes("television")){
+            responsiveVoice.speak("Sure, taking you there.", "UK English Female", {onend:goto(2)});
+          }
+          else if(regText.includes("bravia") || regText.includes("sony")){
+            responsiveVoice.speak("Sure, taking you there.", "UK English Female", {onend:goto(3)});
+          }
+          else if(regText.includes("jbl") || regText.includes("party") || regText.includes("partybox")){
+            responsiveVoice.speak("Sure, taking you there.", "UK English Female", {onend:goto(4)});
+          }
+          else{
+            responsiveVoice.speak("I am sorry, Please speak again.", "UK English Female", {onend:startr});
+          }
+      };
+    }
+    function intro(){
+      var ele = document.querySelector("#assistant");
+      ele.setAttribute("animation-mixer", { clip: "*", loop: "once" });
+      responsiveVoice.speak("Hello, Welcome to VR Shoppy. How can I help you?", "UK English Female", {onend:startr});
+    }
+    function recognize(){
+      var menuc = document.querySelector("#menuc");
+      var query = document.querySelector("#query");
+      menuc.setAttribute("animation",{property:"position",to: "-0.5 -30 -4.5",dur: 5000,easing: "linear",loop: false});
+      query.setAttribute("animation",{property:"position",to: "1 1.2 -3.5",dur: 1000,easing: "linear",loop: false});
+      var cam = document.querySelector("#mycam");
+      var cr = document.querySelector("#cameraRig");
+      cam.setAttribute("animation",{property:"position",to: "0 0 0",dur: 1000,easing: "linear",loop: false});
+      cr.setAttribute("animation",{property:"rotation",to: "0 0 0",dur: 1000,easing: "linear",loop: false});
+      setTimeout(intro,1500);
+    }
+  </script>
+</head>
+
+<body>
+  <a-scene startbutton>
+    <a-assets>
+      <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+      <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous" />
+      <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome"
+        crossorigin="anonymous" />
+      <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg"
+        crossorigin="anonymous" />
+      <a-asset-item id="exoFont"
+        src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150">
+      </a-asset-item>
+      <a-asset-item id="bot" src="3dmodels/final-robot-w-moves.glb"></a-asset-item>
+      <!-- <a-asset-item><img id="my-image" src="Images/mobile.png" /></a-asset-item> -->
+      <img id="head" src="images/headphone.png" />
+      <img id="dress" src="Images/dress.png" />
+      <img id="my-image" src="Images/mobile.png" />
+      <img id="kitchen" src="Images/kitchen.png" />
+      <img id="wash" src="Images/wash.png" />
+      <img id="sofa" src="Images/sofa.png" />
+    </a-assets>
+    <!-- sound="src: url(Audio/hello.mp3); autoplay: true" -->
+    <a-entity gltf-model="#bot" position="-3 0 -4" scale="0.01 0.013 0.01" rotation="0 45 0" animation-mixer="loop:once"
+      id="assistant">
+    </a-entity>
+
+    <a-entity htmlembed position="6 -10 -2" rotation="10 -5 0" id="query">
+      <div style="background-color:#1C1C1C;padding:20px;width:800px;height:600px;padding:30px;"><br/>
+      <h3 style="font-size:60px;color:#DEE1E2;background-color: #030303;margin-bottom:20px;display: inline;padding: 10px;border-radius:15px;">Start speaking <i class="material-icons" style="font-size:40px;">mic</i></h3>
+      <ul class="list-group" style="font-size:50px;">
+        <br/>
+        <li class="list-group-item" id="textspoke">Waiting...</li>
+      </ul>
+      </div>
+    </a-entity>
+    
+
+    <a-image src="#my-image" height="1" position="-8.4 4.2 2" rotation="15 90 0" class="clickable" scale="0.6 0.6 0.6"
+    ></a-image>
+    <a-image src="#dress" height="1" position="-8.4 4.2 6" rotation="15 90 0" class="clickable" scale="0.6 0.6 0.6"
+    ></a-image>
+    <a-image src="#head" height="1" position="-8.4 4.2 -2" rotation="15 90 0" class="clickable" scale="0.6 0.6 0.6"
+    ></a-image>
+    <a-image src="#sofa" height="1" position="-8.4 2.3 -1.8" rotation="15 90 0" class="clickable" scale="0.6 0.6 0.6"
+    ></a-image>
+    <a-image src="#kitchen" height="1" position="-8.4 2.3 5.6" rotation="15 90 0" class="clickable" scale="0.6 0.6 0.6"
+    ></a-image>
+    <a-image src="#wash" height="1" position="-8.4 2.3 2" rotation="15 90 0" class="clickable" scale="0.6 0.6 0.6"
+    ></a-image>
+    <!-- rotation="0 100 0" -->
+    <!-- <a-box id="refresh-button" color="#11ffee00" width="1" height="3" depth="1" 
+            position="-3 0 -5">
+                <a-animation attribute="rotation" begin="click" loop="false" to="0 360 0"></a-animation>
+        </a-box> -->
+    <a-gui-flex-container flex-direction="column" flex-wrap="wrap" justify-content="center" align-items="center"
+      component-padding="0.1" opacity="0.7" width="4" height="6.5" position="-9 2 -2" rotation="15 90 0">
+      <a-gui-button width="2.5" height="0.75" onclick="speak();" key-code="32" value="Electronics" font-family="Arial"
+        background-color="#D3D3D4" font-color="black" margin="0 0 1 0">
+      </a-gui-button>
+      <a-gui-button width="2.5" height="0.75" onclick="speak();" key-code="32" value="Furniture"
+        font-family="Arial" background-color="#D3D3D4" font-color="black" margin="0 0 1 0">
+      </a-gui-button>
+    </a-gui-flex-container>
+    <a-gui-flex-container flex-direction="column" flex-wrap="wrap" justify-content="center" align-items="center"
+      component-padding="0.1" opacity="0.7" width="4" height="6.5" position="-9 2 2" rotation="15 90 0">
+      <a-gui-button width="2.5" height="0.75" onclick="speak();" key-code="32" value="Mobiles" font-family="Arial"
+        background-color="#D3D3D4" font-color="black" margin="0 0 1 0">
+      </a-gui-button>
+      <a-gui-button width="2.5" height="0.75" onclick="speak();" key-code="32" value="Appliances"
+        font-family="Arial" background-color="#D3D3D4" font-color="black" margin="0 0 1 0">
+      </a-gui-button>
+    </a-gui-flex-container>
+    <a-gui-flex-container flex-direction="column" flex-wrap="wrap" justify-content="center" align-items="center"
+      component-padding="0.1" opacity="0.7" width="4" height="6.5" position="-9 2 6" rotation="15 90 0">
+      <a-gui-button width="2.5" height="0.75" onclick="speak();" key-code="32" value="Fashion" font-family="Arial"
+        background-color="#D3D3D4" font-color="black" margin="0 0 1 0">
+      </a-gui-button>
+      <a-gui-button width="2.5" height="0.75" onclick="speak();" key-code="32" value="Kitchen"
+        font-family="Arial" background-color="#D3D3D4" font-color="black" margin="0 0 1 0">
+      </a-gui-button>
+    </a-gui-flex-container>
+    <a-gui-flex-container id="menuc" flex-direction="column" flex-wrap="wrap" justify-content="center" align-items="center"
+      component-padding="0.1" opacity="0.7" width="4" height="5" position="-0.5 10 -4.5" rotation="10 0 0" animation="property: position; to: -0.5 1 -4.5; dur: 2000; easing: linear; loop: false">
+      <a-gui-button width="2.5" height="0.75" onclick="recognize();" key-code="32" value="Talk to Assistant"
+        font-family="Arial" background-color="#D3D3D4" font-color="black" margin="0 0 0.5 0">
+      </a-gui-button>
+      <a-gui-button width="2.5" height="0.75" onclick="explore();" key-code="32" value="Explore categories"
+        font-family="Arial" background-color="#D3D3D4" font-color="black" margin="0 0 0.5 0">
+      </a-gui-button>
+      <!-- <a-gui-label width="3.5" height="0.75" value="← Please turn to explore!" font-family="Arial" margin="0 0 0.05 0" id="label">
+      </a-gui-label> -->
+    </a-gui-flex-container>
+    
+    <a-gui-button width="2" height="0.5" onclick="backy();" key-code="32" value="← Go Back" position="-8.2 0.5 2" rotation="15 90 0"
+    font-family="Arial" font-size="100px" background-color="#D3D3D4" font-color="black">
+  </a-gui-button>
+    <a-entity position="-3 0 -6" rotation="5 0 0">
+      <a-entity position="-0.5 0.5 -0.5" scale="0.6 1.2 1"
+        text-geometry="value: VR SHOPPY; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1;  size: 1.5; height: 0.5;"
+        material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
+    </a-entity>
+    <a-entity geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+      material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;">
+    </a-entity>
+    
+    <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+    <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+    <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+    <a-entity light="color: white; type: ambient;"></a-entity>
+
+    <a-entity id="cameraRig" position="0 1 0">
+      <a-camera look-controls wasd-controls position="0 0 0" id="mycam">
+        <a-gui-cursor id="cursor" raycaster="objects: [gui-interactable]" fuse="true" fuse-timeout="2000" design="ring">
+        </a-gui-cursor>
+        <!-- /cursor -->
+      </a-camera>
+      <!-- /camera -->
+    </a-entity>
+    <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+  </a-scene>
+  <script>
+    // window.onload = function(){
+    //   setInterval(function(){var vrmode = document.querySelector(".a-enter-vr-button");
+    //   vrmode.click();},2000);
+    // }
+    // var elem = document.getElementById("bodym");
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VRSHOPPY</title>
+  <meta name="description" content="VR Shopping Experience" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe-master.min.js"></script>
+  <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
+  <script
+    src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+  <script src="https://supereggbert.github.io/aframe-htmlembed-component/dist/build.js"></script>
+  <script src="https://code.responsivevoice.org/responsivevoice.js?key=0oX5Y7Q8"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script>
+    function Back(){
+      window.history.go(-1);
+    }
+    function submitJ7(){
+      document.getElementById("myForm").submit();
+    }
+  </script>
+  <style>
+    .testimonial-box img {
+    display: inline-block;
+    width: 90px;
+    height:90px;
+    border-radius: 50%;
+    margin: 0 0 15px;
+}
+.testimonial-box h4 {
+    color: #fe4819;
+}
+.testimonial-box p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 400;
+}
+.ratings-icons {
+    color: #fec42d;
+    margin-bottom: 15px;
+}
+  </style>
+</head>
+<body>
+  <a-scene startbutton>
+    <a-assets>
+      <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+      <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous" />
+      <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome"
+        crossorigin="anonymous" />
+      <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg"
+        crossorigin="anonymous" />
+      <a-asset-item id="exoFont"
+        src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2Black.typeface.json?1490305922150">
+      </a-asset-item>
+      <a-asset-item id="bot1" src="3dmodels/mobiles/iphone.glb"></a-asset-item>
+    </a-assets>
+<!-- <a-gui-toggle
+	width="2.5" height="0.75"
+	onclick="testToggleAction"
+	value="label toggle"
+	font-family="Arial"
+	margin="0 0 0.05 0"
+> -->
+<!-- </a-gui-toggle> -->
+<!-- </a-gui-progressbar> -->
+<a-entity htmlembed position="-2 1.5 3" rotation="0 10 0">
+  <form method="POST" id="myForm" action="addedtocart" style="visibility: hidden;">
+    <button type="submit" class="btn btn-warning form-control" style="height: 50px;">Add to Cart</button>
+    <input type="text" value="19" style="visibility: hidden;" id = "item" name="item">
+</form>
+  <div style="background-color:#1C1C1C;padding:20px;width:400px;height: 400px;"><br/>
+  <h3 style="color:#DEE1E2;background-color: #030303;display: inline;padding: 10px;border-radius:15px;">Specifications</h3>
+  <table class="table table-dark" style="margin-top: 30px;">
+    <tbody>
+      <tr>
+        <td>Storage</td>
+        <td>64 GB</td>
+      </tr>
+      <tr>
+        <td>Camera</td>
+        <td>48 MP</td>
+      </tr>
+      <tr>
+        <td>Battery</td>
+        <td>4000 mAh</td>
+      </tr>
+      <tr>
+        <td>Ram</td>
+        <td>4 GB</td>
+      </tr>
+      <tr>
+        <td>Display</td>
+        <td>6.5" (16.51 cm)</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</a-entity>
+<a-entity htmlembed position="2 1.5 3" rotation="0 -10 0">
+  <div style="background-color:#1C1C1C;padding:20px;width:400px;height: 400px;"><br/>
+  <h3 style="color:#DEE1E2;background-color: #030303;display: inline;padding: 10px;border-radius:15px;">User Reviews</h3>
+  <div class="container" style="margin-top:30px;">
+    <div class="row text-center">										
+            <div class="col-sm-6 col-md-4">																		
+              <div class="testimonial-box">							
+                <img src="https://images.pexels.com/photos/206615/pexels-photo-206615.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" class="img-responsive" alt="" width="90">
+                <div class="ratings-icons">
+                  <span>&#9733;</span>
+                  <span>&#9733;</span>
+                  <span>&#9733;</span>
+                  <span>&#9733;</span>
+                  <span>&#9733;</span>
+                </div>
+                <h4>James Baker</h4>
+                <p style="color: white;">Really a good budget phone with big battery. Camera performance also awesome, Except camera modes i love this phone.</p>									 							
+              </div>					
+            </div> <!-- End Col -->																						
+          </div>
+  </div>
+  </div>
+</a-entity>
+    <a-entity scale="0.1 0.2 0.2" position="-0.2 0.75 3.8" rotation="0 0 0"
+    text-geometry="value:Samsung J7; size: 0.5; height: 0.1;"
+    material="color:white;"></a-entity>
+    <a-entity scale="0.1 0.2 0.2" position="-0.12 0.63 3.8" rotation="0 0 0"
+    text-geometry="value:INR 24,000/-; size: 0.35; height: 0.1;" 
+    material="color:white;"></a-entity>
+    <a-gui-button 
+      width="2.5" height="0.75" scale="0.2 0.2 0.2"
+      onclick="submitJ7" key-code="32"
+      value="Add to cart"
+      font-family="Arial"
+      background-color="#D3D3D4"
+      font-color="black"
+      margin="0 0 0.05 0"
+      position="-0.25 0.48 3.8"
+      rotation="0 0 0"
+    >
+    </a-gui-button>
+    <a-gui-button 
+    width="2.5" height="0.75" scale="0.2 0.2 0.2"
+    onclick="Back" key-code="32"
+    value="Go Back"
+    font-family="Arial"
+    background-color="#D3D3D4"
+    font-color="black"
+    margin="0 0 0.05 0"
+    position="0.27 0.48 3.8"
+    rotation="0 0 0"
+  ></a-gui-button>
+    <a-entity gltf-model="#bot1" position="-1 2.5 5" scale="0.015 0.015 0.015" id="assistant">
+    </a-entity>
+    <a-entity gltf-model="#bot1" position="1 2.5 -6.5" scale="0.015 0.015 0.015" rotation="0 180 0"  id="aassistant">
+    </a-entity>
+    <a-entity position="-3 0 -6" rotation="5 0 0">
+      <!-- <a-entity position="-0.5 0.5 -0.5" scale="0.6 1.2 1"
+        text-geometry="value: VR SHOPPY; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1; curveSegments: 1; size: 1.5; height: 0.5;"
+        material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity> -->
+    </a-entity>
+    <a-entity geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+      material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;">
+    </a-entity>
+    <a-entity light="color: #ccccff; intensity: 1; type: ambient;" visible=""></a-entity>
+    <a-entity light="color: ffaaff; intensity: 1.5" position="5 5 5"></a-entity>
+    <a-entity light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
+    <a-entity light="color: white; type: ambient;"></a-entity>
+    <a-entity id="cameraRig" position="0 1 5">
+      <a-camera look-controls wasd-controls position="0 0 0" id="mycam">
+        <a-gui-cursor id="cursor" raycaster="objects: [gui-interactable]" fuse="true" fuse-timeout="2000" design="ring">
+        </a-gui-cursor>
+        <!-- /cursor -->
+      </a-camera>
+      <!-- /camera -->
+    </a-entity>
+    <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+  </a-scene>
+  <script>
+    document.getElementById("myForm").action="addedtocart?id="+localStorage.userid;
+  </script>
+</body>
+
+</html>
