@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Mart</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+</script>
+<style>
+    .container{
+        background-color: #f2f2f2;
+        max-width: 90vw !important;
+    }
+    .navbar-custom {
+      background-color:#6441A5;
+    }
+</style>
+<script>
+    function changelink()
+      {
+        document.getElementById("cart").href="cart?id="+localStorage.userid; 
+      }
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-dark">
+        <a class="navbar-brand" href="/home" style="margin-left: 10vw;font-size:x-large;">VR Shoppy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="shop">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="" id="cart" onclick="changelink()">Cart</a>
+            </li>
+          </ul> -->    
+          <form class="form-inline my-2 my-lg-0" action="searching" method="POST" style="margin-left:1vw;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search for products and brands" id="search" style="width: 40vw;" name="search">
+            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+          </form>
+          <form action="compareitem" method="POST" id="myForm1" class="font-size-14 font-rale" style="margin-right:2vw;margin-left: 2vw;">
+            <!-- <a id="cart" class="py-2 rounded-pill color-primary-bg"> -->
+              <button type="submit" id="butt" class="btn btn-primary font-size-16 px-1 text-white" style="cursor: pointer;font-size: 17px; border: none;">Compare<span id="count">(0)</span></button>
+            <!-- </a> -->
+        </form>
+          <a href="vrmode" target="_blank" class="nav-link" style="color: white;" aria-expanded="false">
+          
+            <span style="font-size: 20px;margin-right: 2vw;"><i class="fas fa-vr-cardboard"></i> See in VR</span>
+                </a>
+            
+          <ul class="navbar-nav ">
+            <!-- PROFILE DROPDOWN - scrolling off the page to the right -->
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" style="color: white;" id="navDropDownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span id="username" style="font-size: 20px;"></span>
+              </a>
+                <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" onClick="(function(){
+                      location.href = 'login';
+                      localStorage.userid = null;
+                      localStorage.username = null;
+                      localStorage.citem = '';
+                      localStorage.count = 0;
+                      return false;
+                  })();return false;" style="cursor: pointer;">Logout</a>
+                </div>
+            </li>
+        </ul>
+            <form action="#" class="font-size-14 font-rale" style="margin-right:2vw;margin-left: 2vw;">
+              <a id="cart" onclick="changelink()" class="py-2 rounded-pill color-primary-bg">
+                <span class="font-size-16 px-2 text-white" style="cursor: pointer;font-size: 17px;"><i class="fas fa-shopping-cart"></i> Cart</span>
+              </a>
+          </form>
+        </div>
+      </nav>
+
+  <main id="main-site" style="margin-top: 60px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5">
+                <br>
+                    <img src="<%=data[0].image%>" alt="product" width="543" height="500">
+                    <div class="form-row pt-4 font-size-16 font-baloo">
+                        <!-- <div class="col">
+                            <form>
+                                <button type="submit" class="btn btn-danger form-control" style="height: 50px;">Proceed to Buy</button>
+                                <input type="text" value="" style="visibility: hidden;" id = "item" name="item">
+                            </form>
+                        </div> -->
+                        <div class="col">
+                            <form method="POST" id="myForm" action="addedtocart">
+                                <button type="submit" class="btn btn-danger form-control" style="height: 50px;">Add to Cart</button>
+                                <input type="text" value="<%=data[0].itemid%>" style="visibility: hidden;" id = "item" name="item">
+                            </form>
+                        </div>
+                        <div class="col">
+                            <form method="POST" id="myForm1" action="">
+                                <button type="submit" id="compare" class="btn btn-warning form-control" onClick="(function(){
+                                    localStorage.citem += ',<%=data[0].itemid%>';
+                                    localStorage.count = Number(localStorage.count) + 1;
+                                    document.getElementById('compare').disabled = true;
+                                    document.getElementById('count').innerHTML='('+localStorage.count+')'; 
+                                    document.getElementById('myForm1').action = 'compareitem?id='+localStorage.citem;
+                                    return false;
+                                })();return false;" style="height: 50px;">Compare</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col">
+                      <!-- <form method="POST" id="myForm" action="addedtocart"> -->
+                          <a href="arview"><button type="button" class="btn btn-primary form-control" style="height: 50px;">View in AR</button></a>
+                          <!-- <input type="text" value="<%=data[0].itemid%>" style="visibility: hidden;" id = "item" name="item"> -->
+                      <!-- </form> -->
+                  </div>
+                </div>
+                <div class="col-sm-7 py-5" style="padding-left: 20px;padding-top:21px !important;">
+                    <h5 class="font-baloo font-size-20"><%=data[0].title%></h5>
+                    <small>by vrshoppy</small>
+                    <div class="d-flex">
+                        <div class="rating text-warning font-size-12">
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="fas fa-star"></i></span>
+                            <span><i class="far fa-star"></i></span>
+                          </div>
+                          <a href="#" class="px-2 font-rale font-size-14">20,534 ratings | 1000+ answered questions</a>
+                    </div>
+                    <hr class="m-0">
+
+                    <!---    product price       -->
+                        <table class="my-3">
+                            <tr class="font-rale font-size-14">
+                                <td>M.R.P:</td>
+                                <td><strike>₹<%=data[0].amount+300%></strike></td>
+                            </tr>
+                            <tr class="font-rale font-size-14">
+                                <td>Deal Price:</td>
+                                <td class="font-size-20 text-danger">₹<span><%=data[0].amount%></span><small class="text-dark font-size-12">&nbsp;&nbsp;Inclusive of all taxes</small></td>
+                            </tr>
+                            <tr class="font-rale font-size-14">
+                                <td>You Save:</td>
+                                <td><span class="font-size-16 text-danger">₹300</span></td>
+                            </tr>
+                        </table>
+                    <!---    !product price       -->
+                     <!--    #policy -->
+                        <div id="policy">
+                            <div class="d-flex">
+                                <div class="return text-center mr-5">
+                                    <div class="font-size-20 my-2 color-second">
+                                        <span class="fas fa-retweet border p-3 rounded-pill"></span>
+                                    </div>
+                                    <a href="#" class="font-rale font-size-12">10 Days <br> Replacement</a>
+                                </div>
+                                <div class="return text-center mr-5">
+                                    <div class="font-size-20 my-2 color-second">
+                                        <span class="fas fa-truck  border p-3 rounded-pill"></span>
+                                    </div>
+                                    <a href="#" class="font-rale font-size-12">Shoping Mart <br>Deliverd</a>
+                                </div>
+                                <div class="return text-center mr-5">
+                                    <div class="font-size-20 my-2 color-second">
+                                        <span class="fas fa-check-double border p-3 rounded-pill"></span>
+                                    </div>
+                                    <a href="#" class="font-rale font-size-12">1 Year <br>Warranty</a>
+                                </div>
+                            </div>
+                        </div>
+                      <!--    !policy -->
+                        <hr>
+
+                    <!-- order-details -->
+                        <div id="order-details" class="font-rale d-flex flex-column text-dark">
+                            <p>Delivery by : May 30  - Jun 2</p>
+                            <p>Sold by <a href="#">Shoping Mart Electronics </a>(4.5 out of 5 | 18,198 ratings)</p>
+                            <p><i class="fas fa-map-marker-alt color-primary"></i>&nbsp;&nbsp;Deliver to Customer - 110078</p>
+                        </div>
+                     <!-- !order-details -->
+                         <hr>
+                        <h6 class="font-rubik">Product Description</h6>
+                        <div class="col-12"></div>
+                        <p class="font-rale font-size-14"><%=data[0].description%></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+  <script>
+      document.getElementById("myForm").action="addedtocart?id="+localStorage.userid;
+      document.getElementById("myForm1").action="compareitem?id="+localStorage.citem;
+    document.getElementById('count').innerHTML='('+localStorage.count+')'; 
+      window.onload = function(){
+        $("#username").html(localStorage.username);
+      }
+  </script>
+</body>
+</html>

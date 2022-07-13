@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Home</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+            <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <meta name="google-signin-client_id" content="866621071063-cnfbpd5fm98bs11ekb4qha0mt8nmn2np.apps.googleusercontent.com">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <script>
+                var g = <%= g %>;
+                var l = <%= l %>;
+                var i = <%= i %>;
+                var nu = <%= nu %>;
+                if(g==0 && l==1){
+                    g = 0;
+                    l = 0;
+                }
+                function signOut() {
+                    var auth2 = gapi.auth2.getAuthInstance();
+                    auth2.signOut().then(function () {
+                        console.log('User signed out.');
+                    });
+                }
+                function onFailure(error) {
+                    console.log(error);
+                }
+                function getCookie(cname) {
+                    var name = cname + "=";
+                    var ca = document.cookie.split(';');
+                    for(var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                        }
+                        if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+                function check(){
+                    var cookiedata = getCookie("owncookiesecret");
+                    if (cookiedata != "") {
+                        document.getElementById("trending").submit();
+                    } 
+                }
+                $(document).ready(function(){
+                    $("#login").click(function(){
+                        check();
+                        $("#signup").hide();
+                        $("#login").hide();
+                        $("#my-signin2").fadeOut();
+                        $("#maya").fadeOut();
+                        $("#maya1").fadeOut();
+                        $("#form").fadeIn();
+                        $("#arrow").fadeIn();   
+                    });
+                    $("#signup").click(function(){
+                        $("#signup").hide();
+                        $("#login").hide();
+                        $("#my-signin2").fadeOut();
+                        $("#maya").fadeOut();
+                        $("#maya1").fadeOut();
+                        $("#form1").fadeIn();
+                        $("#arrow").fadeIn();
+                    });
+                    $("#arrow").click(function(){
+                        window.location.reload();
+                    });
+                });
+            </script>
+            <style>
+                #content{
+                    text-align: center;
+                    margin-top: 3%;
+                }
+                input{
+                    text-align: center;
+                }
+                #my-signin2{
+                    height: 100px;
+                    width:200px;
+                    margin: 0 auto;
+                }
+                #signup{
+                    color:white;
+                    border:3px solid;
+                    border-radius: 25px;
+                    padding: 1%;
+                    width:270px;
+                    margin-top: 100px;
+                    cursor: pointer;
+                }
+                #login{
+                    color:#6441A5;
+                    border:3px solid;
+                    border-radius: 25px;
+                    border-color: white;
+                    padding: 1%;
+                    width:270px;
+                    margin-top: 35px;
+                    background-color: white;
+                    cursor: pointer;
+                }
+                body{
+                    background: #6441A5;  
+                    background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  
+                    background: linear-gradient(to right, #2a0845, #6441A5);
+                }
+                input{
+                    background-color: transparent;
+                    margin-top: 35px;
+                    margin-bottom: 35px;
+                    border-top: 0px;
+                }
+                #input1{
+                    background: transparent;
+                    border: none;
+                    color:white;
+                    border-bottom: 1px solid white;
+                }
+                #input2{
+                    background: transparent;
+                    border: none;
+                    color:white;
+                    border-bottom: 1px solid white;
+                }
+                #form{
+                    display: none;
+                }
+                #form1{
+                    display: none;
+                }
+                #input0,#input3,#input4,#input5{
+                    background: transparent;
+                    border: none;
+                    color:white;
+                    border-bottom: 1px solid white;
+                }
+                #submit1,#submit{
+                    margin-bottom: 30px;
+                    cursor: pointer;
+                    height: 40px;
+                    border-radius: 25px;
+                    background: white;
+                    width: 100px;
+                    color:#6441A5;
+                    border:1px solid;
+                    border-color: white;
+                }
+                #arrow{
+                    color:White;
+                    font-size: 30px;
+                    position: relative;
+                    right: 12%;
+                    display: none;
+                    cursor: pointer;
+                }
+                body{
+                    padding-top: 10vh;
+                }
+            </style>
+        </head>
+        <body>
+                <div class="container" id="content">
+                    <% if (l == 1) { %>
+                        <div class="alert alert-info alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            Logged Out Successfully.
+                      </div>
+                    <% } %>
+                    <% if (i == 1) { %>
+                        <div class="alert alert-info alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            Incorrect Password,Try Again.
+                      </div>
+                    <% } %>
+                    <% if (nu == 1) { %>
+                        <div class="alert alert-info alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            Please Signup before Login.
+                      </div>
+                    <% } %>
+                    <% if (usex == 1) { %>
+                        <div class="alert alert-info alert-dismissible fade show">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            User already exists, Please Login.
+                      </div>
+                    <% } %>
+                    <i class="fa fa-arrow-left" id="arrow"></i>
+                    <img src="images/VRShoppy.png" alt="logo" id="image" height="150px">
+                    <div id="signup" class="container">
+                        <h3>SIGN UP</h3>
+                    </div>
+                    <div id="login" class="container">
+                        <h3>LOGIN</h3>
+                    </div>
+                    <form action="logindo" id="form" method="POST">
+                            <input type="email" id="input1" name="input1" class="form-control" placeholder="Enter Email" required>
+                            <input type="password" id="input2" name="input2" class="form-control" placeholder="Enter Password" required>
+                            <br/>
+                          <button id="submit" type="submit" value="submit">Submit</button>
+                    </form>
+                    <form action="registerdo" id="form1" method="POST">
+                        <input type="text" id="input0" name="input0" class="form-control" placeholder="Enter Name" required >
+                        <input type="email" id="input3" name="input3" class="form-control" placeholder="Enter Email"  required>
+                        <input type="number" id="input4" name="input4" class="form-control" placeholder="Enter Mobile Number"  required>
+                        <input type="password" id="input5" name="input5" class="form-control" placeholder="Enter Password" required>
+                        <br/>
+                        <button id="submit1" type="submit" value="LOGIN">Submit</button>
+                    </form>
+                    <!-- <a href="#" onclick="signOut();">Sign out</a> -->
+                </div>
+                <script type="text/javascript">
+                    function preventBack() { window.history.forward(); }
+                    setTimeout("preventBack()", 0);
+                    window.onunload = function () { null };
+                </script>
+        </body>
+    </html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Mart</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+</script>
+<style>
+    .container{
+        background-color: #f2f2f2;
+        max-width: 90vw !important;
+    }
+    .navbar-custom {
+      background-color:#6441A5;
+    }
+</style>
+<script>
+    function changelink()
+      {
+        document.getElementById("cart").href="cart?id="+localStorage.userid; 
+      }
+      function dis()
+      {
+      }
+</script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-dark">
+        <a class="navbar-brand" href="/home" style="margin-left: 10vw;font-size:x-large;">VR Shoppy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="shop">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="" id="cart" onclick="changelink()">Cart</a>
+            </li>
+          </ul> -->    
+          <form class="form-inline my-2 my-lg-0" action="searching" method="POST" style="margin-left:1vw;">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search for products and brands" id="search" style="width: 40vw;" name="search">
+            <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+          </form>
+        </div>
+        <!-- <form action="compareitem" method="POST" id="myForm1" class="font-size-14 font-rale" style="margin-right:2vw;margin-left: 2vw;"> -->
+            <!-- <a id="cart" class="py-2 rounded-pill color-primary-bg"> -->
+              <!-- <button type="submit" id="butt" class="btn btn-primary font-size-16 px-1 text-white" style="cursor: pointer;font-size: 17px; border: none;">Compare<span id="count">(0)</span></button> -->
+            <!-- </a> -->
+        <!-- </form> -->
+        <a href="vrmode" target="_blank" class="nav-link" style="color: white;" aria-expanded="false">
+        <span style="font-size: 20px;margin-right: 2vw;"><i class="fas fa-vr-cardboard"></i> See in VR</span>
+            </a>
+        
+      <ul class="navbar-nav ">
+        <!-- PROFILE DROPDOWN - scrolling off the page to the right -->
+        <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" style="color: rgb(179, 179, 179);" id="navDropDownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span id="username" style="font-size: 20px;"></span>
+          </a>
+            <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+                <a class="dropdown-item" href="#">Profile</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" onClick="(function(){
+                  location.href = 'login';
+                  localStorage.userid = null;
+                  localStorage.username = null;
+                  localStorage.citem = '';
+                  localStorage.count = 0;
+                  return false;
+              })();return false;" style="cursor: pointer;">Logout</a>
+            </div>
+        </li>
+    </ul>
+        <form action="#" class="font-size-14 font-rale" style="margin-right:2vw;margin-left: 2vw;">
+          <a id="cart" onclick="changelink()" class="py-2 rounded-pill color-primary-bg">
+            <span class="font-size-16 px-2 text-white" style="cursor: pointer;font-size: 17px;"><i class="fas fa-shopping-cart"></i>Cart</span>
+          </a>
+      </form>
+      </nav>
+
+  <main id="main-site" style="margin-top: 60px;">
+    <table class="table ">
+        <!-- <thead>
+          <tr>
+            <th scope="col">Property</th>
+            <th scope="col">Item1</th>
+            <th scope="col">Item2</th>
+          </tr>
+        </thead> -->
+        <tbody>
+          <tr>
+              <th></th>
+            <th scope="col"><img class="img img-thumbnail" src="<%=data[0].image%>" alt="product" width="300" height="300"></th>
+            <th scope="col"><img class="img img-thumbnail" src="<%=data[1].image%>" alt="product" width="300" height="300"></th>
+          </tr>
+          <tr>
+            <th scope="row">Title</th>
+            <td scope="col"><%= data[0].title%></td>
+            <td scope="col"><%= data[1].title%></td>
+          </tr>
+          <tr>
+            <th scope="row">Category</th>
+            <td scope="col"><%= data[0].category%></td>
+            <td scope="col"><%= data[1].category%></td>
+          </tr>
+          <tr>
+            <th scope="row">Cost</th>
+            <td scope="col">₹<%= data[0].amount%></td>
+            <td scope="col">₹<%= data[1].amount%></td>
+          </tr>
+          <tr>
+            <th scope="row">Ratings</th>
+            <td scope="col"><%= data[0].rating%></td>
+            <td scope="col"><%= data[1].rating%></td>
+          </tr>
+          <tr>
+            <th scope="row">Description</th>
+            <td scope="col"><%= data[0].description%></td>
+            <td scope="col"><%= data[1].description%></td>
+          </tr>
+        </tbody>
+      </table>
+  <script>
+      document.getElementById("myForm").action="addedtocart?id="+localStorage.userid;
+      document.getElementById("myForm1").action="compareitem?id="+localStorage.citem;
+      function count1() {
+        }
+      window.onload = function(){
+        $("#username").html(localStorage.username);
+      }
+    //   console.log(one);
+  </script>
+</body>
+</html>

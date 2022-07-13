@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+  <style>
+      .mainpart{
+          margin:3% 3%;
+          padding:3%;
+          height:40%;
+          width:1500px;
+      }
+      .img{
+          width:150px;
+          height:150px;
+      }
+      .card{
+        width:70%;
+        float:left;
+        margin:1%;
+      }
+      .costdata{
+          margin-left:16%;
+          padding:0% 2%;
+      }
+      span{
+            font-size: 25px;
+      }
+      .bottom{
+        display:inline;
+        margin:1% 2%;
+      }
+      .total{
+        float:right;
+        height:300px;
+        width:350px;
+        margin-right:6%;
+        margin-top:22%;
+      }
+      .navbar-custom {
+        background-color:#6441A5;
+      }
+      body{
+        padding-top:30px;
+      }
+  </style>
+  
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-dark">
+    <a class="navbar-brand" href="/home" style="margin-left: 10vw;font-size:x-large;">VR Shoppy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="shop">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" id="cart" onclick="changelink()">Cart</a>
+        </li>
+      </ul> -->    
+      <form class="form-inline my-2 my-lg-0" action="searching" method="POST" style="margin-left:1vw;">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search for products and brands" id="search" style="width: 40vw;" name="search">
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+      </form>
+    </div>
+    <a href="vrmode" target="_blank" class="nav-link" style="color: white;" aria-expanded="false">
+      
+    <span style="font-size: 20px;margin-right: 2vw;"><i class="fas fa-vr-cardboard"></i> See in VR</span>
+        </a>
+    
+  <ul class="navbar-nav ">
+    <!-- PROFILE DROPDOWN - scrolling off the page to the right -->
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" style="color: white;" id="navDropDownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <span id="username" style="font-size: 20px;"></span>
+      </a>
+        <div class="dropdown-menu" aria-labelledby="navDropDownLink">
+            <a class="dropdown-item" href="#">Profile</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" onClick="(function(){
+              location.href = 'login';
+              localStorage.userid = null;
+              localStorage.username = null;
+              localStorage.citem = '';
+              localStorage.count = 0;
+              return false;
+          })();return false;" style="cursor: pointer;">Logout</a>
+        </div>
+    </li>
+</ul>
+    <!-- <form action="#" class="font-size-14 font-rale" style="margin-right:2vw;margin-left: 2vw;">
+      <a id="cart" onclick="changelink()" class="py-2 rounded-pill color-primary-bg">
+        <span class="font-size-16 px-2 text-white" style="cursor: pointer;font-size: 17px;"><i class="fas fa-shopping-cart"></i> Cart</span>
+      </a>
+  </form> -->
+  </nav>
+      <div class="row" id="mainpartone">
+        <div class="col-8">
+        <div class="mainpart">
+            <h3 style="margin-left: 12px;">My Cart</h3>
+            <!--Item-->
+            <div id="result">
+              <% data.forEach(function(doc, i){if(doc.itemid !=del){ %>
+                <div class="card">
+                  <div class="card-body" style="padding: 0px;">
+                    <img class="float-left img" src="<%= doc.image %>" alt="Card image cap">
+                    <div class="costdata">
+                      <br/>
+                    <h3 class="card-title"><%= doc.title %></h3>
+                    <p>₹<%= doc.amount%></p><br>
+                  </div>
+                  </div>
+                  <div class="card-footer">
+                    <a href="#" class="float-right btn btn-primary" style="margin-left: 20px;">Place Order</a>
+                    <a href="remove?id1=<%= doc.itemid%>&id=<%=userid%>" class="float-right btn btn-danger remove" style="margin-left: 20px;">Remove</a>
+                  </div>
+                </div>
+
+                <%}})%>
+            </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <!--Total Cost-->
+      <div class="card total">
+        <div class="card-header">
+          <h5 class="card-title">PRICE DETAILS</h5>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Price : ₹<span id="prices"><%= sum%></span></h5>
+          <h5 class="card-title">Delivery Charges : ₹30</h5>
+        </div>
+        <div class="card-footer">
+          <h5 class="card-title">Total : ₹<span id="ftotal"><%= sum+30%></span></h5>
+        </div>
+      </div>
+      <!--end-->
+    </div>
+    </div>
+    </div>
+    <script>window.onload = function(){
+      $("#username").html(localStorage.username);
+    }
+    //document.getElementsByClassName("remove").href+='&id='+localStorage.userid;
+    //document.querySelector('.remove').href+='&id='+localStorage.userid;
+    // function myfun(){
+    //   alert(document.getElementsByClassName("remove").href+='&id='+localStorage.userid);
+    // }
+    </script>
+</body>
+</html>
