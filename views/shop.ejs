@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+        <script src="https://kit.fontawesome.com/3e9f57e266.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/3e9f57e266.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -62,7 +64,34 @@
   right: 28px;
   border-radius: 50%;
 }
-
+.open-button1 {
+  background-color: #f10707;
+  color: white;
+  padding: 20px;
+  padding-left: 20 px;
+  padding-right: 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 120px;
+  border-radius: 50%;
+}
+.open-button2 {
+  background-color: #f10707;
+  color: white;
+  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 200px;
+  border-radius: 50%;
+}
 .card-body{
 
         background-color:#f8e14e;
@@ -258,7 +287,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-dark">
-        <a class="navbar-brand" href="/home" style="margin-left: 10vw;font-size:x-large;">VR Shoppy</a>
+        <a class="navbar-brand" href="/home" style="margin-left: 10vw;font-size:x-large;"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -283,7 +312,7 @@
 
                 <a href="vrmode" target="_blank" class="nav-link" style="color: white;" aria-expanded="false">
           
-                  <span style="font-size: 20px;margin-right: 2vw;"><i class="fas fa-head-side-goggles"></i> Enter Metaverse</span>
+                  <span style="font-size: 20px;margin-right: 2vw;"><i class="fa-solid fa-head-side-goggles"></i> Metaverse</span>
                       </a>
             
           <ul class="navbar-nav ">
@@ -328,6 +357,8 @@
       </div>
     </section>
     <button class="open-button" onclick="openForm()" style="z-index: 10;"><i class="fas fa-microphone" style="font-size: 20px;"></i></button>
+    <button class="open-button1" onclick="openForm()" style="z-index: 10;"><i class="fa-solid fa-comment-dots" style="font-size: 20px;"></i></button>
+    <button class="open-button2" onclick="openForm()" style="z-index: 10;"><i class="fa-solid fa-video" style="font-size: 20px;"></i></button>
 
 <div class="chat-popup" id="myForm" style="z-index: 25;">
   <form action="/action_page.php" class="form-container">
@@ -352,4 +383,4 @@
     </div>
     <script src="js/carousel.js" type="text/javascript"></script>
 </body>
-</html>
+</html>VR Shoppy
