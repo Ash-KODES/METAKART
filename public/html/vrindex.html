@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>VRSHOPPY</title>
+  <title>METAKART</title>
   <meta name="description" content="VR Shopping Experience" />
   <script src="https://cdn.jsdelivr.net/npm/aframe@1.0.4/dist/aframe-master.min.js"></script>
   <script src="https://rawgit.com/rdub80/aframe-gui/master/dist/aframe-gui.min.js"></script>
@@ -78,7 +78,7 @@
           console.log('You said: ', event.results[0][0].transcript);
           document.getElementById("textspoke").innerHTML = event.results[0][0].transcript;
           if(regText.includes("hello") || regText.includes("hi")){
-            responsiveVoice.speak("Hello, Welcome to VR Shoppy. How can I help you?", "UK English Female", {onend:startr});
+            responsiveVoice.speak("Hello, Welcome to METAKART. How can I help you?", "UK English Female", {onend:startr});
           }
           else if(regText.includes("electronics") || regText.includes("electronic")){
             responsiveVoice.speak("Sure, taking you to Electronics.", "UK English Female", {onend:goto(1)});
@@ -103,7 +103,7 @@
     function intro(){
       var ele = document.querySelector("#assistant");
       ele.setAttribute("animation-mixer", { clip: "*", loop: "once" });
-      responsiveVoice.speak("Hello, Welcome to VR Shoppy. How can I help you?", "UK English Female", {onend:startr});
+      responsiveVoice.speak("Hello, Welcome to METAKART. How can I help you?", "UK English Female", {onend:startr});
     }
     function recognize(){
       var menuc = document.querySelector("#menuc");
@@ -217,7 +217,7 @@
   </a-gui-button>
     <a-entity position="-3 0 -6" rotation="5 0 0">
       <a-entity position="-0.5 0.5 -0.5" scale="0.6 1.2 1"
-        text-geometry="value: VR SHOPPY; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1;  size: 1.5; height: 0.5;"
+        text-geometry="value: METAKART; font: #exoFont; bevelEnabled: true; bevelSize: 0.1; bevelThickness: 0.1;  size: 1.5; height: 0.5;"
         material="color:pink; metalness:0.9; roughness: 0.05; sphericalEnvMap: #chrome;"></a-entity>
     </a-entity>
     <a-entity geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"

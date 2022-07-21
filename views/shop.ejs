@@ -250,7 +250,7 @@
           document.getElementById("tarea").innerHTML = event.results[0][0].transcript;
           document.getElementById("gify").style.visibility = "hidden";
           if(regText.includes("hello")){
-            responsiveVoice.speak("Hello, Welcome to VR Shoppy. How can I help you?", "UK English Female", {onend:startr});
+            responsiveVoice.speak("Hello, Welcome to METAKART. How can I help you?", "UK English Female", {onend:startr});
           }
           else if(regText.includes("electronics") || regText.includes("electronic")){
             responsiveVoice.speak("Sure, taking you to Electronics.", "UK English Female", {onend:goto(1)});
