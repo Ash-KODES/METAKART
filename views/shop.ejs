@@ -60,8 +60,23 @@
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
-  bottom: 23px;
-  right: 28px;
+  bottom: 40px;
+  right: 93%;
+  border-radius: 50%;
+}
+
+.open-button2 {
+  background-color: #f10707;
+  color: white;
+  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 40px;
+  right: 88%;
   border-radius: 50%;
 }
 .open-button1 {
@@ -74,22 +89,8 @@
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
-  bottom: 23px;
+  bottom: 100px;
   right: 120px;
-  border-radius: 50%;
-}
-.open-button2 {
-  background-color: #f10707;
-  color: white;
-  padding: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: fixed;
-  bottom: 23px;
-  right: 200px;
   border-radius: 50%;
 }
 .card-body{
@@ -153,6 +154,14 @@
   opacity: 1;
 }
   </style>
+  
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script><df-messenger
+    intent="WELCOME"
+    chat-title="METAKART-BOT"
+    agent-id="e6d6860b-92dc-4854-80a5-e5f5a7d2d7fa"
+    language-code="en"
+  ></df-messenger>
+  
   <script>
       var images1 = ["https://rukminim1.flixcart.com/image/416/416/jzu60sw0/bean-bag-cover/8/t/3/xxxl-hv-bb-xxxl-tn-c-home-valley-original-imafjqtknyvys3fa.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jsyyufk0/portable-laptop-table/d/s/2/mfb-melamine-fiberboard-shi-012-memeho-pink-original-imafedzfvg7npavy.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jrf8o7k0/recliner/a/y/d/coffee-bean-cotton-frcbb1-furlay-original-imafd4qtgpdttypz.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jufu4y80/headphone/x/q/t/maupin-i7-single-stereo-wireless-original-imafcczyt9hp8nvz.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/k6jnfrk0/headphone/r/m/c/boat-airdopes-431-twin-wireless-original-imafzzhyjp4fkehx.jpeg?q=70","https://rukminim1.flixcart.com/image/880/1056/watch/s/p/j/68004pp02-fastrack-original-imae4ub84hgx7rh6.jpeg?q=50","https://rukminim1.flixcart.com/image/416/416/k6ci8i80/iron/h/r/h/philips-gc090-750-w-dry-iron-750-w-dry-iron-blue-original-imafg5tdkt6en4yk.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/k0lbdzk0pkrrdj/induction-cook-top-refurbished/j/k/p/power-saver-u-pic-20-0-prestige-original-imafg6x65gskxzgy.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/kcuug7k0/mobile/x/u/q/samsung-galaxy-a51-sm-a515fmswins-original-imaftw9cecyhye7d.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/k7p37gw0/air-conditioner-new/9/n/g/ac-1t-gsc-12ntc3-wta-1-split-fixed-speed-godrej-original-imafpvjfnfhgwzv3.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/k4ss2a80/refrigerator-new/n/x/b/rr19t241bse-nl-2-samsung-original-imafnmkcsmkchra8.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/kdeum4w0/emergency-light/b/4/r/ssk-emb-07-01-syska-original-imafubkshdtggefy.jpeg?q=70"];
       var images = ["https://newsupdatetimes.com/wp-content/uploads/2019/12/2.jpg","https://cdn.pixabay.com/photo/2017/03/19/01/43/living-room-2155376_1280.jpg","https://cdn.pixabay.com/photo/2015/01/20/12/51/mobile-605422_1280.jpg","https://cdn.pixabay.com/photo/2016/12/07/09/46/washing-machine-1889087_960_720.jpg","https://cdn.pixabay.com/photo/2016/11/22/19/08/blur-1850082_1280.jpg","https://cdn.pixabay.com/photo/2017/11/02/19/14/saucepans-2912191_1280.jpg"];
@@ -357,7 +366,7 @@
       </div>
     </section>
     <button class="open-button" onclick="openForm()" style="z-index: 10;"><i class="fas fa-microphone" style="font-size: 20px;"></i></button>
-    <button class="open-button1" onclick="openForm()" style="z-index: 10;"><i class="fa-solid fa-comment-dots" style="font-size: 20px;"></i></button>
+    <!-- <button class="open-button1" onclick="openForm()" style="z-index: 10;"><i class="fa-solid fa-comment-dots" style="font-size: 20px;"></i></button> -->
     <button class="open-button2" onclick="openForm()" style="z-index: 10;"><i class="fa-solid fa-video" style="font-size: 20px;"></i></button>
 
 <div class="chat-popup" id="myForm" style="z-index: 25;">
