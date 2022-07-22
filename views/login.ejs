@@ -14,6 +14,7 @@
             <meta name="google-signin-client_id" content="866621071063-cnfbpd5fm98bs11ekb4qha0mt8nmn2np.apps.googleusercontent.com">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+            <link rel="icon" type="image/x-icon" href="images/favicon.ico">
             <script>
                 var g = <%= g %>;
                 var l = <%= l %>;
@@ -50,7 +51,7 @@
                     var cookiedata = getCookie("owncookiesecret");
                     if (cookiedata != "") {
                         document.getElementById("trending").submit();
-                    } 
+                    }
                 }
                 $(document).ready(function(){
                     $("#login").click(function(){
@@ -61,7 +62,7 @@
                         $("#maya").fadeOut();
                         $("#maya1").fadeOut();
                         $("#form").fadeIn();
-                        $("#arrow").fadeIn();   
+                        $("#arrow").fadeIn();
                     });
                     $("#signup").click(function(){
                         $("#signup").hide();
@@ -111,8 +112,8 @@
                     cursor: pointer;
                 }
                 body{
-                    background: #6441A5;  
-                    background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  
+                    background: #6441A5;
+                    background: -webkit-linear-gradient(to right, #2a0845, #6441A5);
                     background: linear-gradient(to right, #3c3a3b, #444750);
                 }
                 input{
@@ -167,7 +168,12 @@
                 body{
                     padding-top: 10vh;
                 }
-                
+                .logoimg {
+                margin-left: 5vw;
+                height: 70%;
+                width: 3%;
+                  }
+
             </style>
         </head>
         <body>

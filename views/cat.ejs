@@ -11,6 +11,7 @@
   <script src="https://kit.fontawesome.com/3e9f57e266.js" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <style>
   #gif{
     height:20%;
@@ -74,23 +75,29 @@
       nav{
         height: 60px;
       }
+      .logoimg {
+  margin-left: 5vw;
+  height: 70%;
+  width: 3%;
+}
   </style>
   <script>
      document.getElementsByClassName("mic").onclick = function() {
           document.getElementById("gif").style.visibility = "block";
       }
       function listen(){
-        document.getElementById("gif").style.visibility = "visible";        
+        document.getElementById("gif").style.visibility = "visible";
       }
       function changelink()
       {
-        document.getElementById("cart").href="/cart?id="+localStorage.userid; 
+        document.getElementById("cart").href="/cart?id="+localStorage.userid;
       }
   </script>
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-dark">
-    <a class="navbar-brand" href="/home" style="margin-left: 10vw;font-size:x-large;">METAKART</a>
+    <img class="logoimg" src="images/logo.png" alt="logo img" >
+   <a class="navbar-brand" href="/home" style="margin-left: 1vw;font-size:x-large;">METAKART</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -102,7 +109,7 @@
         <li class="nav-item">
           <a class="nav-link" href="" id="cart" onclick="changelink()">Cart</a>
         </li>
-      </ul> -->    
+      </ul> -->
       <form class="form-inline my-2 my-lg-0" action="searching" method="POST" style="margin-left:1vw;">
         <input class="form-control mr-sm-2" type="search" placeholder="Search for products and brands" id="search" style="width: 25vw;" name="search">
         <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
@@ -112,10 +119,10 @@
             </a>
 
             <a href="vrmode" target="_blank" class="nav-link" style="color: white;" aria-expanded="false">
-          
+
               <span style="font-size: 20px;margin-right: 2vw;"><i class="fa-solid fa-head-side-goggles"></i> Metaverse</span>
                   </a>
-        
+
       <ul class="navbar-nav ">
         <!-- PROFILE DROPDOWN - scrolling off the page to the right -->
         <li class="nav-item dropdown">

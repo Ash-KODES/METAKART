@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <script src="https://code.responsivevoice.org/responsivevoice.js?key=0oX5Y7Q8"></script>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <style>
       .mainpart{
           /* margin:2%; */
@@ -153,15 +154,21 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
+
+.logoimg {
+  margin-left: 5vw;
+  height: 70%;
+  width: 3%;
+}
   </style>
-  
+
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script><df-messenger
     intent="WELCOME"
     chat-title="METAKART-BOT"
     agent-id="e6d6860b-92dc-4854-80a5-e5f5a7d2d7fa"
     language-code="en"
   ></df-messenger>
-  
+
   <script>
       var images1 = ["https://rukminim1.flixcart.com/image/416/416/jzu60sw0/bean-bag-cover/8/t/3/xxxl-hv-bb-xxxl-tn-c-home-valley-original-imafjqtknyvys3fa.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jsyyufk0/portable-laptop-table/d/s/2/mfb-melamine-fiberboard-shi-012-memeho-pink-original-imafedzfvg7npavy.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jrf8o7k0/recliner/a/y/d/coffee-bean-cotton-frcbb1-furlay-original-imafd4qtgpdttypz.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/jufu4y80/headphone/x/q/t/maupin-i7-single-stereo-wireless-original-imafcczyt9hp8nvz.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/k6jnfrk0/headphone/r/m/c/boat-airdopes-431-twin-wireless-original-imafzzhyjp4fkehx.jpeg?q=70","https://rukminim1.flixcart.com/image/880/1056/watch/s/p/j/68004pp02-fastrack-original-imae4ub84hgx7rh6.jpeg?q=50","https://rukminim1.flixcart.com/image/416/416/k6ci8i80/iron/h/r/h/philips-gc090-750-w-dry-iron-750-w-dry-iron-blue-original-imafg5tdkt6en4yk.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/k0lbdzk0pkrrdj/induction-cook-top-refurbished/j/k/p/power-saver-u-pic-20-0-prestige-original-imafg6x65gskxzgy.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/kcuug7k0/mobile/x/u/q/samsung-galaxy-a51-sm-a515fmswins-original-imaftw9cecyhye7d.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/k7p37gw0/air-conditioner-new/9/n/g/ac-1t-gsc-12ntc3-wta-1-split-fixed-speed-godrej-original-imafpvjfnfhgwzv3.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/k4ss2a80/refrigerator-new/n/x/b/rr19t241bse-nl-2-samsung-original-imafnmkcsmkchra8.jpeg?q=70","https://rukminim1.flixcart.com/image/416/416/kdeum4w0/emergency-light/b/4/r/ssk-emb-07-01-syska-original-imafubkshdtggefy.jpeg?q=70"];
       var images = ["https://newsupdatetimes.com/wp-content/uploads/2019/12/2.jpg","https://cdn.pixabay.com/photo/2017/03/19/01/43/living-room-2155376_1280.jpg","https://cdn.pixabay.com/photo/2015/01/20/12/51/mobile-605422_1280.jpg","https://cdn.pixabay.com/photo/2016/12/07/09/46/washing-machine-1889087_960_720.jpg","https://cdn.pixabay.com/photo/2016/11/22/19/08/blur-1850082_1280.jpg","https://cdn.pixabay.com/photo/2017/11/02/19/14/saucepans-2912191_1280.jpg"];
@@ -179,7 +186,7 @@
             </div></div></a>
             `
       }
-      document.getElementById("content").innerHTML = html; 
+      document.getElementById("content").innerHTML = html;
       $("#username").html(localStorage.username);
     }
     function searcher(){
@@ -195,7 +202,7 @@
               <h5 class="card-title" style="text-align:center;">${titles[i]}</h5>
             </div>`
             html += `</div></a>`
-          } 
+          }
         }
         if(f == 0){
           console.log("E");
@@ -204,7 +211,7 @@
         else{
           console.log("ND");
         }
-        document.getElementById("content").innerHTML = html; 
+        document.getElementById("content").innerHTML = html;
     }
     if(localStorage.userid == null || localStorage.userid == 'null'){
       localStorage.username = "<%= user.user %>";
@@ -218,7 +225,7 @@
     }
     function changelink()
       {
-        document.getElementById("cart").href="cart?id="+localStorage.userid; 
+        document.getElementById("cart").href="cart?id="+localStorage.userid;
       }
       function goto(c){
         if(c == 1){
@@ -296,7 +303,8 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-dark">
-        <a class="navbar-brand" href="/home" style="margin-left: 10vw;font-size:x-large;">METAKART</a>
+       <img class="logoimg" src="images/logo.png" alt="logo img" >
+      <a class="navbar-brand" href="/home" style="margin-left: 1vw;font-size:x-large;">METAKART</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -308,29 +316,29 @@
             <li class="nav-item">
               <a class="nav-link" href="" id="cart" onclick="changelink()">Cart</a>
             </li>
-          </ul> -->    
+          </ul> -->
           <form class="form-inline my-2 my-lg-0" id="myform" action="searching" method="POST" style="margin-left:1vw;">
             <input class="form-control mr-sm-2" type="search" placeholder="Search for products and brands" id="search" style="width: 25vw;" name="search">
             <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
           </form>
           <a href="vrmode" target="_blank" class="nav-link" style="color: white;" aria-expanded="false">
-          
+
             <span style="font-size: 20px;margin-right: 1vw;margin-left: 2vw;"><i class="fas fa-vr-cardboard"></i> VR view
             </span>
                 </a>
 
                 <a href="vrmode" target="_blank" class="nav-link" style="color: white;" aria-expanded="false">
-          
+
                   <span style="font-size: 20px;margin-right: 2vw;"><i class="fa-solid fa-head-side-goggles"></i> Metaverse</span>
                       </a>
-            
+
           <ul class="navbar-nav ">
             <!-- PROFILE DROPDOWN - scrolling off the page to the right -->
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" style="color: white;" id="navDropDownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span id="username" style="font-size: 20px;"></span>
               </a>
-              
+
                 <div class="dropdown-menu" aria-labelledby="navDropDownLink">
                     <a class="dropdown-item" href="#">Profile</a>
                     <div class="dropdown-divider"></div>
@@ -382,7 +390,7 @@
     document.getElementById("myForm").style.display = "block";
     startr();
   }
-  
+
   function closeForm() {
     document.getElementById("myForm").style.display = "none";
     document.getElementById("tarea").innerHTML = "Listening...";
