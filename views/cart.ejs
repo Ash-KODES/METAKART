@@ -15,6 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <style>
       .mainpart{
           margin:3% 3%;
@@ -55,13 +56,19 @@
       body{
         padding-top:30px;
       }
+      .logoimg {
+  margin-left: 5vw;
+  height: 70%;
+  width: 3%;
+}
   </style>
-  
+
 </head>
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-custom fixed-top navbar-dark">
-    <a class="navbar-brand" href="/home" style="margin-left: 10vw;font-size:x-large;">METAKART</a>
+    <img class="logoimg" src="images/logo.png" alt="logo img" >
+   <a class="navbar-brand" href="/home" style="margin-left: 1vw;font-size:x-large;">METAKART</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -73,22 +80,22 @@
         <li class="nav-item">
           <a class="nav-link" href="" id="cart" onclick="changelink()">Cart</a>
         </li>
-      </ul> -->    
+      </ul> -->
       <form class="form-inline my-2 my-lg-0" action="searching" method="POST" style="margin-left:1vw;">
         <input class="form-control mr-sm-2" type="search" placeholder="Search for products and brands" id="search" style="width: 20vw;" name="search">
         <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
       </form>
     </div>
     <a href="vrmode" target="_blank" class="nav-link" style="color: white;" aria-expanded="false">
-      
+
     <span style="font-size: 20px;margin-right: 1vw;margin-left: 2vw;"><i class="fas fa-vr-cardboard"></i> VR View</span>
         </a>
 
         <a href="vrmode" target="_blank" class="nav-link" style="color: white;" aria-expanded="false">
-          
+
           <span style="font-size: 20px;margin-right: 2vw;"><i class="fa-solid fa-head-side-goggles"></i> Metaverse</span>
               </a>
-    
+
   <ul class="navbar-nav ">
     <!-- PROFILE DROPDOWN - scrolling off the page to the right -->
     <li class="nav-item dropdown">
