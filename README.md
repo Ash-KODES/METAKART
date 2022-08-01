@@ -1,14 +1,14 @@
 ## FLIPKART GRID 4.0
 
-![LOGO](https://github.com/Ash-KODES/METADATA/blob/main/logo.png?raw=true)
+![LOGO](https://metakart.herokuapp.com/images/logo.png)
 
 ## METAKART
 "It is Metaverse Shopping Application having features like Live Stores,VR-3D Views,AR Try-on and Collaborating dashboard for shoppers"
 
 ## Application Interfaces
-![Homepage GIF](https://user-images.githubusercontent.com/106697681/176986263-b8c278f1-41a8-4b85-80e6-be46e9cc9a00.gif)
-![LiveStore GIF](https://user-images.githubusercontent.com/106697681/176986263-b8c278f1-41a8-4b85-80e6-be46e9cc9a00.gif)
-![VR view GIF](https://user-images.githubusercontent.com/106697681/176986263-b8c278f1-41a8-4b85-80e6-be46e9cc9a00.gif)
+![Homepage GIF](https://github.com/Ash-KODES/METADATA/blob/main/home.gif?raw=true)
+![LiveStore GIF](https://github.com/Ash-KODES/METADATA/blob/main/LIVE%20STORE.gif?raw=true)
+![VR view GIF](https://github.com/Ash-KODES/METADATA/blob/main/vr%20view.gif?raw=true)
 
 ## 👨‍💻 Demo
 
