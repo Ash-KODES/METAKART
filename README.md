@@ -1,8 +1,14 @@
 ## FLIPKART GRID 4.0
 
+![LOGO](https://github.com/Ash-KODES/METADATA/blob/main/logo.png?raw=true)
 
 ## METAKART
+"It is Metaverse Shopping Application having features like Live Stores,VR-3D Views,AR Try-on and Collaborating dashboard for shoppers"
 
+## Application Interfaces
+![Homepage GIF](https://user-images.githubusercontent.com/106697681/176986263-b8c278f1-41a8-4b85-80e6-be46e9cc9a00.gif)
+![LiveStore GIF](https://user-images.githubusercontent.com/106697681/176986263-b8c278f1-41a8-4b85-80e6-be46e9cc9a00.gif)
+![VR view GIF](https://user-images.githubusercontent.com/106697681/176986263-b8c278f1-41a8-4b85-80e6-be46e9cc9a00.gif)
 
 ## 👨‍💻 Demo
 
@@ -36,3 +42,4 @@ METAKART is licensed under the MIT License.
 - [Ashutosh Kumar Choudhary](https://github.com/Ash-KODES)
 - [Animesh Dubey](https://github.com/animesh624)
 - [Aman Singh](https://github.com/aman-s-20)
+
