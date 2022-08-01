@@ -6,11 +6,15 @@
 
 ## 👨‍💻 Demo
 
+
+Check out our Project's Demo: https://bit.ly/3SidHJT
+
+
 Check out the website: https://metakart.herokuapp.com/
 
 ## 👇 Prerequisites
 
-Before contributing or adding a new feature, please make sure you have already installed the following tools:
+Before running the project locally , please make sure you have already installed the following tools:
 
 - [Git](https://git-scm.com/downloads)
 - [NodeJs](https://nodejs.org/en/download/)
