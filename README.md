@@ -27,3 +27,8 @@ Before contributing or adding a new feature, please make sure you have already i
 ## 🛡️ License
 
 METAKART is licensed under the MIT License.
+
+## 💪 Team-BigO(A^3)
+- [Ashutosh Kumar Choudhary](https://github.com/Ash-KODES)
+- [Animesh Dubbey](https://github.com/animesh624)
+- [Aman Singh](https://github.com/aman-s-20)
