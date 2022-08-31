@@ -1,4 +1,4 @@
-## Algo-Cypher
+## MetaKart
 
 ![LOGO](https://github.com/Ash-KODES/METADATA/blob/main/logo.png?raw=true)
 
@@ -44,7 +44,7 @@ Before running the project locally , please make sure you have already installed
 
 METAKART is licensed under the MIT License.
 
-## 💪 Team-BigO(A^3)
+## 💪 Team-Algo-Cypher
 - [Ashutosh Kumar Choudhary](https://github.com/Ash-KODES)
 - [Animesh Dubey](https://github.com/animesh624)
 - [Aman Singh](https://github.com/aman-s-20)
