@@ -1,4 +1,4 @@
-## FLIPKART GRID 4.0 TEAM-BigO(A^3)
+## Algo-Cypher
 
 ![LOGO](https://github.com/Ash-KODES/METADATA/blob/main/logo.png?raw=true)
 
