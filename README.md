@@ -30,7 +30,7 @@ Before running the project locally , please make sure you have already installed
 
 - [Git](https://git-scm.com/downloads)
 - [NodeJs](https://nodejs.org/en/download/)
-- [ReactJs](https://nodejs.org)
+- [ReactJs](https://reactjs.org/docs/getting-started.html)
 
 ## 🛠️ Installation Steps
 
