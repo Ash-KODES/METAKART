@@ -49,5 +49,5 @@ METAKART is licensed under the MIT License.
 - [Ashutosh Kumar Choudhary](https://github.com/Ash-KODES)
 - [Animesh Dubey](https://github.com/animesh624)
 - [Aman Singh](https://github.com/aman-s-20)
-- [Aadit](https://github.com/aaditya-20)
+- [Aaditya](https://github.com/aaditya-20)
 
