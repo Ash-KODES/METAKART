@@ -24,7 +24,7 @@ Check out our Project's Demo: https://bit.ly/3SidHJT
 
 Check out the website: https://metakart.herokuapp.com/
 
-## 👇 Prerequisites
+## 👇 Prerequisites 
 
 Before running the project locally , please make sure you have already installed the following tools:
 
