@@ -3,7 +3,7 @@
 ![LOGO](https://github.com/Ash-KODES/METADATA/blob/main/logo.png?raw=true)
 
 ## METAKART
-"It is Metaverse Shopping Application having features like Live Stores,VR-3D Views,AR Try-on and Collaborating dashboard for shoppers"
+"It is Metaverse Shopping Application having features like Live Stores,VR-3D Views,AR Try-on and Collaborating dashboard for shoppers".
 
 ## Intregrated Applications.
 
@@ -16,7 +16,7 @@ LIVESTORE-https://github.com/Ash-KODES/LIVE-METASTORE
 ![LiveStore GIF](https://github.com/Ash-KODES/METADATA/blob/main/LIVE%20STORE.gif?raw=true)
 ![VR view GIF](https://github.com/Ash-KODES/METADATA/blob/main/vr%20view.gif?raw=true)
 
-## 👨‍💻 Demo
+## 👨‍💻 Demo Video.
 
 
 Check out our Project's Demo: https://bit.ly/3SidHJT
@@ -24,7 +24,7 @@ Check out our Project's Demo: https://bit.ly/3SidHJT
 
 Check out the website: https://metakart.herokuapp.com/
 
-## 👇 Prerequisites 
+## 👇 Prerequisites. 
 
 Before running the project locally , please make sure you have already installed the following tools:
 
@@ -38,14 +38,14 @@ Before running the project locally , please make sure you have already installed
 2. Clone the project.
 3. Navigate to the project directory `cd METAKART`.
 4. Install dependencies with `npm install`.
-5. Run `node index.js`
+5. Run  `node index.js`.
 
 
-## 🛡️ License
+## 🛡️ License.
 
 METAKART is licensed under the MIT License.
 
-## 💪 Team-Algo-Cypher
+## 💪 Team-Algo-Cypher .
 - [Ashutosh Kumar Choudhary](https://github.com/Ash-KODES)
 - [Animesh Dubey](https://github.com/animesh624)
 - [Aman Singh](https://github.com/aman-s-20)
