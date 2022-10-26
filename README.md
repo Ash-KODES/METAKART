@@ -19,7 +19,7 @@ LIVESTORE-https://github.com/Ash-KODES/LIVE-METASTORE
 ## 👨‍💻 Demo Video.
 
 
-Check out our Project's Demo: https://bit.ly/3SidHJT
+Check out our project's Demo: https://bit.ly/3SidHJT
 
 
 Check out the website: https://metakart.herokuapp.com/
