@@ -11,7 +11,7 @@ METACHAT-https://github.com/Ash-KODES/METACHAT
 
 LIVESTORE-https://github.com/Ash-KODES/LIVE-METASTORE
 
-## Application Interfaces
+## Application Interfaces.
 ![Homepage GIF](https://github.com/Ash-KODES/METADATA/blob/main/home.gif?raw=true)
 ![LiveStore GIF](https://github.com/Ash-KODES/METADATA/blob/main/LIVE%20STORE.gif?raw=true)
 ![VR view GIF](https://github.com/Ash-KODES/METADATA/blob/main/vr%20view.gif?raw=true)
