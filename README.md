@@ -41,7 +41,7 @@ Before running the project locally , please make sure you have already installed
 5. Run `node index.js`
 
 
-## 🛡️ License
+## 🛡️ License.
 
 METAKART is licensed under the MIT License.
 
