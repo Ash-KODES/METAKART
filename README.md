@@ -5,7 +5,7 @@
 ## METAKART
 "It is Metaverse Shopping Application having features like Live Stores,VR-3D Views,AR Try-on and Collaborating dashboard for shoppers"
 
-## Intregrated Applications
+## Intregrated Applications.
 
 METACHAT-https://github.com/Ash-KODES/METACHAT
 
