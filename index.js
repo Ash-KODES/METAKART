@@ -32,17 +32,7 @@ app.get('/login', (req, res)=>{
 app.get('/shop', (req, res)=>{
     res.render('shop');
     });
-/*app.get('/cat', (req, res)=>{
-    console.log(req.query.id);
-    data=db.collection("products").find();
-    data.each(function(err, doc) {
-        if(doc!=null){
-        console.log(doc.image);
-        item ={image:doc.image,title:doc.title,price:doc.title,category:doc.category,amount:doc.amount};
-        }        
-    });
-    res.render('cat',{ data: item});
-    });*/
+
 app.get('/checkout', (req, res)=>{
     var query = { itemid : req.query.id };
     db.collection("products").find(query).toArray(function(err, result) {
@@ -56,13 +46,7 @@ app.post('/searching',urlencoded,(req,res)=>{
     var item= req.body.search;
     console.log("hello")
     console.log(item)
-    // db.collection("products").find( { title : { $regex : item } } ).toArray(function(err, doc) {
-    //     if (err) throw err;
-    //     if(doc!=null){
-    //         console.log(doc)
-    //         console.log("hello")
-    //     res.render('shop');
-    //     }});
+
     var newarr1=[]
     db.collection('products').find({}).toArray(function(err, prod) {
         if (err) throw err;
@@ -366,6 +350,7 @@ app.get('/cat', (req, res)=>{
         res.render('cat',{data:doc,data1:req.query.id});
         }   
     });
+    //old mongo client refactor
     // MongoClient.connect(url, function(err, db) {
     //     if (err) throw err;
     //     var dbo = db.db("shopping");
