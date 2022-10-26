@@ -16,7 +16,7 @@ LIVESTORE-https://github.com/Ash-KODES/LIVE-METASTORE
 ![LiveStore GIF](https://github.com/Ash-KODES/METADATA/blob/main/LIVE%20STORE.gif?raw=true)
 ![VR view GIF](https://github.com/Ash-KODES/METADATA/blob/main/vr%20view.gif?raw=true)
 
-## 👨‍💻 Demo Video
+## 👨‍💻 Demo Video.
 
 
 Check out our Project's Demo: https://bit.ly/3SidHJT
