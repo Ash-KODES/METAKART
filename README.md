@@ -45,7 +45,7 @@ Before running the project locally , please make sure you have already installed
 
 METAKART is licensed under the MIT License.
 
-## 💪 Team-Algo-Cypher
+## 💪 Team-Algo-Cypher.
 - [Ashutosh Kumar Choudhary](https://github.com/Ash-KODES)
 - [Animesh Dubey](https://github.com/animesh624)
 - [Aman Singh](https://github.com/aman-s-20)
