@@ -5,13 +5,13 @@
 ## METAKART
 "It is Metaverse Shopping Application having features like Live Stores,VR-3D Views,AR Try-on and Collaborating dashboard for shoppers"
 
-## Intregrated Applications
+## Intregrated Applications.
 
 METACHAT-https://github.com/Ash-KODES/METACHAT
 
 LIVESTORE-https://github.com/Ash-KODES/LIVE-METASTORE
 
-## Application Interfaces
+## Application Interfaces.
 ![Homepage GIF](https://github.com/Ash-KODES/METADATA/blob/main/home.gif?raw=true)
 ![LiveStore GIF](https://github.com/Ash-KODES/METADATA/blob/main/LIVE%20STORE.gif?raw=true)
 ![VR view GIF](https://github.com/Ash-KODES/METADATA/blob/main/vr%20view.gif?raw=true)
@@ -24,7 +24,7 @@ Check out our Project's Demo: https://bit.ly/3SidHJT
 
 Check out the website: https://metakart.herokuapp.com/
 
-## 👇 Prerequisites
+## 👇 Prerequisites 
 
 Before running the project locally , please make sure you have already installed the following tools:
 
@@ -34,11 +34,11 @@ Before running the project locally , please make sure you have already installed
 
 ## 🛠️ Installation Steps
 
-1. Fork the project.
+1. Fork the project. 
 2. Clone the project.
 3. Navigate to the project directory `cd METAKART`.
 4. Install dependencies with `npm install`.
-5. Run `node index.js`.
+5. Run `node index.js`
 
 
 ## 🛡️ License
