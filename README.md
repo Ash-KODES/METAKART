@@ -35,7 +35,7 @@ Before running the project locally , please make sure you have already installed
 ## 🛠️ Installation Steps
 
 1. Fork the project. 
-2. Clone the project.
+2. Clone the  project.
 3. Navigate to the project directory `cd METAKART`.
 4. Install dependencies with `npm install`.
 5. Run  `node index.js`.
